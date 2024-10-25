@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart'; // Importing Cupertino Widgets
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,20 +9,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: CupertinoColors.white, // Use CupertinoColors for iOS
-      ),
-      child: const Center(
-        child: Text(
-          'Hello World',
-          textDirection: TextDirection.ltr,
-          style: TextStyle(
-            fontSize: 32,
-            color: CupertinoColors.black, // Cupertino color
-          ),
-        ),
-      ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('My App')),
+        body: Column(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Image.asset('assets/image/pic1.jpg'),
+    Image.asset('assets/image/pic2.jpg'),
+    Image.asset('assets/image/pic3.jpg'),
+  ],
+),
+     ),
     );
   }
 }
